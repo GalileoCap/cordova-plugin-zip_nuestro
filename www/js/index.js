@@ -20,10 +20,10 @@ onError= (e) => { console.log("ERROR", e); }
 
 window.probar = function probar(){
 	window.requestFileSystem(PERSISTENT, 1024 * 1024, function(fs) {
-			 fs.root.getFile('hexadecimal.zip', {create: false}, function(fileEntry) {
+			 fs.root.getFile('devel/test.zip', {create: false}, function(fileEntry) {
 					 fileUrl = fileEntry.toURL();
 						zip.unzip_dir(fileUrl, (d, e) => console.log("DATO DIR", d, "e", e));
-					 zip.unzip_str(fileUrl, "hexadecimal.js", (d, e) => console.log("DATO", d, "e", e));
+						zip.unzip_str(fileUrl, "1k_A.txt", (d, e) => console.log("DATO", d, "e", e));
 				 }, onError);
 			 }, onError);
 }
